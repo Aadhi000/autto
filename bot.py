@@ -124,7 +124,7 @@ async def start_in(event):
 @bot.on(events.CallbackQuery(data="helper"))
 async def helper(event):
     await event.edit(
-        '**Instructions**\n\nAdd me to your channel as administrator with all permissions.!\n\n**ᴄʀᴇᴀᴛᴏʀ › [ᴀᴀᴅʜɪ](t.me/AboutAadhi)**',
+        '**Instructions**\n\nAdd me to your channel as administrator with all permissions.!\n\n**ᴄʀᴇᴀᴛᴏʀ › [ᴀᴀᴅʜɪ](https://t.me/AboutAadhi)**',
         buttons=Button.inline("Home", data="start"),
     )
 
@@ -238,7 +238,7 @@ async def approver(event):
         welcome_msg.get(chat)
         or "Hello {name}, your request to join {chat} has been {dn}"
     )
-    chat_welcome += "\n\n/start to know more."  # \n\n**[ᴀᴀᴅʜɪ](t.me/AboutAadhi)**"
+    chat_welcome += "\n\n/start to know more."  # \n\n**[ᴀᴀᴅʜɪ](https://t.me/AboutAadhi)**"
     who = await bot.get_entity(event.user_id)
     chat_ = await bot.get_entity(chat)
     dn = "approved!"
