@@ -94,7 +94,7 @@ start_msg = """Hi {user}!
 
 __**Click help button for more..!**__"""
 start_buttons = [
-    [Button.inline("ʜᴇʟᴘ", data="helper"),Button.url("ᴄʀᴇᴀᴛᴏʀ", "https://t.me/AboutAadhi")],    
+    [Button.inline("ʜᴇʟᴘ", data="helper")],    
 ]
 
 
@@ -124,7 +124,7 @@ async def start_in(event):
 @bot.on(events.CallbackQuery(data="helper"))
 async def helper(event):
     await event.edit(
-        '**Instructions**\n\nAdd me to your channel as administrator with all permissions.!\n\n**@aboutaadhi**',
+        '**Instructions**\n\nAdd me to your channel as administrator with all permissions.!\n\nThen create link with join request and share.',
         buttons=Button.inline("Home", data="start"),
     )
 
