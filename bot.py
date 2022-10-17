@@ -92,10 +92,9 @@ start_msg = """Hi {user}!
 **I can**:
 - **Auto approve new join requests.**
 
-<i>**Click help button for more..!**</i>"""
+__**Click help button for more..!**__"""
 start_buttons = [
-    [Button.inline("ʜᴇʟᴘ", data="helper")],
-    [Button.url("ᴄʀᴇᴀᴛᴏʀ", "https://t.me/AboutAadhi")],    
+    [Button.inline("ʜᴇʟᴘ", data="helper"),Button.url("ᴄʀᴇᴀᴛᴏʀ", "https://t.me/AboutAadhi")],    
 ]
 
 
