@@ -125,7 +125,7 @@ async def start_in(event):
 @bot.on(events.CallbackQuery(data="helper"))
 async def helper(event):
     await event.edit(
-        '**Instructions**\n\nAdd me to your channel as administrator with all permissions.!\n\n**ᴄʀᴇᴀᴛᴏʀ › [ᴀᴀᴅʜɪ](https://t.me/AboutAadhi)**',
+        '**Instructions**\n\nAdd me to your channel as administrator with all permissions.!\n\n**@aboutaadhi**',
         buttons=Button.inline("Home", data="start"),
     )
 
