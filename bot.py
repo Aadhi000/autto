@@ -254,7 +254,7 @@ async def approver(event):
     ):
         await bot.send_message(
             event.user_id,
-            chat_welcome.format(name=who.first_name, chat=chat_.title, dn=dn)",            
+            chat_welcome.format(name=who.first_name, chat=chat_.title, dn=dn),            
         )
     with contextlib.suppress(errors.rpcerrorlist.UserAlreadyParticipantError):
         await bot(
