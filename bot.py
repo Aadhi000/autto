@@ -236,9 +236,9 @@ async def approver(event):
     welcome_msg = eval(await db.get("WELCOME_MSG") or "{}")
     chat_welcome = (
         welcome_msg.get(chat)
-        or "Hello {name}, your request to join {chat} has been {dn}"
+        or ""
     )
-    chat_welcome += "\n\n/start"
+    chat_welcome += "/start"
     who = await bot.get_entity(event.user_id)
     chat_ = await bot.get_entity(chat)
     dn = "approved!"
