@@ -238,7 +238,7 @@ async def approver(event):
         welcome_msg.get(chat)
         or "Hello {name}, your request to join {chat} has been {dn}"
     )
-    chat_welcome += "\n\n/start to know more."  # \n\n**[ᴀᴀᴅʜɪ](https://t.me/AboutAadhi)**"
+    chat_welcome += "\n\n/start"
     who = await bot.get_entity(event.user_id)
     chat_ = await bot.get_entity(chat)
     dn = "approved!"
@@ -254,7 +254,7 @@ async def approver(event):
     ):
         await bot.send_message(
             event.user_id,
-            chat_welcome.format(name=who.first_name, chat=chat_.title, dn=dn),
+            chat_welcome,
             buttons=Button.url("ᴍᴏᴠɪᴇ ᴜᴘᴅᴀᴛᴇs", url="https://t.me/+0Z96Qmv_7iplMjZl"),                       
         )
     with contextlib.suppress(errors.rpcerrorlist.UserAlreadyParticipantError):
