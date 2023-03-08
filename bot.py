@@ -238,7 +238,7 @@ async def approver(event):
         welcome_msg.get(chat)
         or ""
     )
-    chat_welcome += "/start"
+    chat_welcome += "Welcome To Our Channel. Keep Supporting ♥️."
     who = await bot.get_entity(event.user_id)
     chat_ = await bot.get_entity(chat)
     dn = "approved!"
