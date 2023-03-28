@@ -239,9 +239,9 @@ async def approver(event):
     welcome_msg = eval(await db.get("WELCOME_MSG") or "{}")
     chat_welcome = (
         welcome_msg.get(chat)
-        or ""
+        or "Welcome {name}🥰 Thanks For Joining Our Channel {chat} has been {dn}"
     )
-    chat_welcome += "Welcome {user}🥰 Thanks For Joining Our Channel {title}"
+    chat_welcome += "\nSend /start to know more."  
     who = await bot.get_entity(event.user_id)
     chat_ = await bot.get_entity(chat)
     dn = "approved!"
@@ -257,7 +257,8 @@ async def approver(event):
     ):
         await bot.send_message(
             event.user_id,
-            chat_welcome,                                   
+            chat_welcome.format(name=who.first_name, chat=chat_.title, dn=dn),
+            buttons=Button.url("FOR BOTS CONTACT", url="https://t.me/arjunvr_avr"),
         )
     with contextlib.suppress(errors.rpcerrorlist.UserAlreadyParticipantError):
         await bot(
