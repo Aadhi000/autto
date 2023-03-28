@@ -227,8 +227,6 @@ async def mod_welcome(event):
             f"Welcome message for {chat.title} has been successfully set!"
         )
 
-        {user}=(user=from_.first_name)
-        {title}={chat.title}
         
 
 
