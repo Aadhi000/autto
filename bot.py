@@ -227,8 +227,11 @@ async def mod_welcome(event):
             f"Welcome message for {chat.title} has been successfully set!"
         )
 
-{user}=(user=from_.first_name)
-{title}={chat.title}
+        {user}=(user=from_.first_name)
+        {title}={chat.title}
+        
+
+
 
 @bot.on(events.Raw(types.UpdateBotChatInviteRequester))
 async def approver(event):
