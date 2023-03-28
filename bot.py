@@ -212,7 +212,7 @@ async def mod_welcome(event):
     await event.delete()
     async with bot.conversation(event.sender_id) as conv:
         await conv.send_message(
-            "Send the new welcome message you want to be sent to a user when he is approved into your channel.\nAvailable formattings:\n- {name} - users name.\n- {chat} - chat title.",
+            "Send the new welcome message you want to be sent to a user when he is approved into your channel.\nAvailable formattings:\n- {user} - users name.\n- {chat.title} - chat title.",
             buttons=Button.force_reply(),
         )
         msg = await conv.get_reply()
@@ -238,7 +238,7 @@ async def approver(event):
         welcome_msg.get(chat)
         or ""
     )
-    chat_welcome += "Welcome {name} 🥰 Thanks For Joining Our Channel {chat}"
+    chat_welcome += "Welcome {user} 🥰 Thanks For Joining Our Channel {chat.title}"
     who = await bot.get_entity(event.user_id)
     chat_ = await bot.get_entity(chat)
     dn = "approved!"
@@ -302,6 +302,6 @@ async def broad(e):
 
 
 log.info("Started Bot - %s", bot_username)
-log.info("\n@AboutAadhi\n\nBy - @aadhixr")
+log.info("\n@AboutAadhi\n\nBy - @aboutaadhi")
 
 bot.run_until_disconnected()
