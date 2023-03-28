@@ -227,6 +227,8 @@ async def mod_welcome(event):
             f"Welcome message for {chat.title} has been successfully set!"
         )
 
+{user}=(user=from_.first_name)
+{title}={chat.title}
 
 @bot.on(events.Raw(types.UpdateBotChatInviteRequester))
 async def approver(event):
@@ -238,7 +240,7 @@ async def approver(event):
         welcome_msg.get(chat)
         or ""
     )
-    chat_welcome += "Welcome {user} 🥰 Thanks For Joining Our Channel {chat.title}"
+    chat_welcome += "Welcome {user}🥰 Thanks For Joining Our Channel {title}"
     who = await bot.get_entity(event.user_id)
     chat_ = await bot.get_entity(chat)
     dn = "approved!"
