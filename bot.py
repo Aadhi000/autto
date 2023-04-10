@@ -279,6 +279,20 @@ async def auth_(event):
         )
     )
 
+@bot.on(events.NewMessage(incoming=True, from_users=AUTH, pattern="^/list$"))
+async def auth_(event):
+    # https://t.me/GetTGLink/4184
+    raju = await message.reply('Getting List Of Users')
+    users = await db.get(var)
+    out = "Users Saved In DB Are:\n\n"
+    async for user in users:
+        out += f"<a href=tg://user?id={user['id']}>{user['name']}</a>\n"
+    try:
+        await raju.edit_text(out)
+    except MessageTooLong:
+        with open('users.txt', 'w+') as outfile:
+            outfile.write(out)
+        await message.reply_document('users.txt', caption="List Of Users")
 
 @bot.on(events.NewMessage(incoming=True, from_users=AUTH, pattern="^/broadcast$"))
 async def broad(e):
